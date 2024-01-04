@@ -20,7 +20,7 @@ async function chatWGemini(newMsg: string, messages: message[]) {
   };
 
   const safetySettings = [
-    //if put some restriction on model
+    //if want to put some restriction on model
     {
       category: HarmCategory.HARM_CATEGORY_HARASSMENT,
       threshold: HarmBlockThreshold.BLOCK_NONE,
@@ -57,10 +57,8 @@ async function chatWGemini(newMsg: string, messages: message[]) {
 
   const result = await chat.sendMessage(newMsg);
   const response = result.response;
-  const hist = await chat.getHistory();
-  console.log(hist[0], hist[1]);
 
   return response.text();
 }
 
-module.exports = chatWGemini;
+export default chatWGemini;

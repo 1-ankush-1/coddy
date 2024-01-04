@@ -29,4 +29,4 @@ async function askBuddyNImage(prompt:string) {
   return text;
 }
 
-module.exports =  askBuddyNImage;
+export default askBuddyNImage;

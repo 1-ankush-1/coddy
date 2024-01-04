@@ -15,4 +15,4 @@ async function askBuddy(prompt: string) {
   return text;
 }
 
-module.exports = askBuddy;
+export default askBuddy;

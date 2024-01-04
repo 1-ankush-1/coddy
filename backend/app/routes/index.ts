@@ -9,6 +9,7 @@ router.use("/chat", chatRoutes);
 
 router.use((req: express.Request, res: express.Response) => {
   console.log("no routes found");
+  res.send("no routes found");
 });
 
 export default router;

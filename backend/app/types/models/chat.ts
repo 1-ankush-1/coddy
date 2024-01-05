@@ -4,12 +4,14 @@ import { message } from "../gemini/message";
 interface ChatAttributes {
   id: string;
   name: string;
-  message: Array<message>;
   userId: string;
+  isdeleted?: Boolean;
 }
 
 //below are optional
-interface ChatCreationAttributes extends Optional<ChatAttributes, "id"> {}
+interface ChatCreationAttributes extends Optional<ChatAttributes, "id"> {
+  isdeleted?: Boolean;
+}
 
 interface ChatInstance
   extends Model<ChatAttributes, ChatCreationAttributes>,

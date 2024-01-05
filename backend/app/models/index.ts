@@ -1,4 +1,5 @@
 import Chat from "./chat";
+import Message from "./message";
 import User from "./user";
 
 User.hasMany(Chat, { sourceKey: "id", foreignKey: "userId", as: "chats" });
@@ -8,4 +9,15 @@ Chat.belongsTo(User, {
   as: "user",
 });
 
-export { User, Chat };
+Chat.hasMany(Message, {
+  sourceKey: "id",
+  foreignKey: "chatId",
+  as: "messages",
+});
+
+Message.belongsTo(Chat, {
+  foreignKey: "chatId",
+  as: "chats",
+});
+
+export { User, Chat, Message };
